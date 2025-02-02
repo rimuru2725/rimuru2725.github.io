@@ -13,8 +13,9 @@
     "sass": "^1.83.4"
   },
     "scripts": {
-      "start": "parcel src/index.html",
-      "build": "parcel build src/index.html --public-url ./"
-    }
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir dist --public-url ./",
+    "clean": "rm -rf dist .parcel-cache"
+  }
   
 }
