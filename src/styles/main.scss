@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Variables
 $primary-color: #0a0a0a;
 $secondary-color: #1a1a1a;
@@ -362,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 
     &:hover {
-      background: darken($accent-color, 10%);
+      background: color.adjust($accent-color, $lightness: -10%);
       color: $primary-color;
     }
   }
