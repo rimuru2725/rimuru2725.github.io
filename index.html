@@ -5,8 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vivek's Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+    <!-- Animate.css for Enhanced Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- AOS (Animate on Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Vivek Sharma - Full Stack Developer Portfolio">
+    <meta name="keywords" content="Vivek Sharma, Full Stack Developer, Web Development, Portfolio">
+    <meta name="author" content="Vivek Sharma">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Vivek Sharma - Portfolio">
+    <meta property="og:description" content="Portfolio of Vivek Sharma - Full Stack Developer">
+    <meta property="og:type" content="website">
+
   <style>
     /* Complete styles for the style tag */
 :root {
@@ -18,10 +42,12 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       scrollbar-width: thin;
+       scrollbar-color: var(--accent-color) var(--secondary-color);
+    }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -29,12 +55,106 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  perspective: 1px;
 }
+
+.project-showcase .img-fluid {
+    width: 100%;
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+}
+
+.parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+            transform: translateZ(-1px) scale(2);
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
 
 body.dark-theme {
   background-color: var(--primary-color);
   color: var(--text-color);
 }
+
+
+.skill-radar {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Animated Project Showcase */
+        .project-showcase {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-showcase:hover .project-overlay {
+            opacity: 1;
+        }
+
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        /* Advanced Scroll Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--accent-color);
+            z-index: 1000;
+            transition: width 0.2s ease;
+        }
+
+        /* Hover Animations */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
 
 .cursor {
   width: 10px;
@@ -429,6 +549,8 @@ h1, h2, h3, h4, h5, h6 {
   </style>
 </head>
 <body class="dark-theme">
+  <div class="parallax-bg"></div>
+  <div class="scroll-progress"></div>
   <div class="cursor"></div>
   <div class="cursor-follower"></div>
 
@@ -507,120 +629,76 @@ h1, h2, h3, h4, h5, h6 {
     </div>
   </section>
 
-  <section id="skills" class="skills">
+  <section id="skills" class="skills py-5">
     <div class="container">
-      <h2 class="section-title text-center" data-aos="fade-up">My Skills</h2>
-      <div class="row g-4 mt-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="skill-card">
-            <div class="skill-icon">
-              <i class="fas fa-code"></i>
+        <h2 class="section-title text-center mb-4">My Skills</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <canvas class="skill-radar" id="skillRadarChart"></canvas>
             </div>
-            <h3>Programming Languages</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="90"></div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="glass-card p-3 text-center hover-lift">
+                            <h4>Programming</h4>
+                            <p>Java, Python, C++</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="glass-card p-3 text-center hover-lift">
+                            <h4>Web Development</h4>
+                            <p>HTML, CSS, JavaScript</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="glass-card p-3 text-center hover-lift">
+                            <h4>Core Competencies</h4>
+                            <p>Data Structures, Algorithms, Problem Solving</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul class="skill-list">
-              <li>Java (5★ HackerRank)</li>
-              <li>Python</li>
-              <li>C++</li>
-            </ul>
-          </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="skill-card">
-            <div class="skill-icon">
-              <i class="fas fa-server"></i>
-            </div>
-            <h3>Web Development</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="85"></div>
-            </div>
-            <ul class="skill-list">
-              <li>Flask / React</li>
-              <li>HTML / CSS / JavaScript</li>
-              <li>MongoDB / MySQL</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="skill-card">
-            <div class="skill-icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <h3>Core Competencies</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="80"></div>
-            </div>
-            <ul class="skill-list">
-              <li>Data Structures & Algorithms</li>
-              <li>Object-Oriented Programming</li>
-              <li>Problem Solving (5★ HackerRank)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title text-center" data-aos="fade-up">Featured Projects</h2>
-      <div class="row g-4 mt-4">
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="screenshots/home1.png" alt="FitForge">
-            </div>
-            <div class="project-content">
-              <h3>FitForge</h3>
-              <p>AI-powered fitness platform providing personalized workout plans and nutrition guidance with comprehensive health metrics tracking</p>
-              <div class="project-tags">
-                <span>Flask</span>
-                <span>MongoDB</span>
-                <span>Chart.js</span>
+<section id="projects" class="projects py-5">
+  <div class="container">
+      <h2 class="section-title text-center mb-4">Featured Projects</h2>
+      <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+              <div class="project-showcase position-relative overflow-hidden rounded-3 glass-card">
+                  <img src="screenshots/home1.png" alt="FitForge" class="img-fluid w-100">
+                  <div class="project-overlay">
+                      <h3 class="text-white">FitForge</h3>
+                      <p class="text-white text-center px-3">AI-powered fitness platform with personalized workout plans and health metrics tracking</p>
+                      <a href="https://github.com/rimuru2725/FitForge" target="_blank" class="btn btn-accent">View Project</a>
+                  </div>
               </div>
-              <a href="https://github.com/rimuru2725/FitForge" class="btn btn-outline-light btn-sm">View Project</a>
-            </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="screenshots/home2.png" alt="HealthGuardian">
-            </div>
-            <div class="project-content">
-              <h3>HealthGuardian</h3>
-              <p>Real-time medical guidance platform with hospital mapping and emergency response features including SOS alerts</p>
-              <div class="project-tags">
-                <span>Node.js</span>
-                <span>Express</span>
-                <span>Twilio API</span>
+          <div class="col-lg-4 col-md-6">
+              <div class="project-showcase position-relative overflow-hidden rounded-3 glass-card">
+                  <img src="screenshots/home2.png" alt="HealthGuardian" class="img-fluid w-100">
+                  <div class="project-overlay">
+                      <h3 class="text-white">HealthGuardian</h3>
+                      <p class="text-white text-center px-3">Real-time medical guidance platform with hospital mapping and emergency SOS alerts</p>
+                      <a href="https://github.com/rimuru2725/HealthGuardian" target="_blank" class="btn btn-accent">View Project</a>
+                  </div>
               </div>
-              <a href="https://github.com/rimuru2725/HealthGuardian" class="btn btn-outline-light btn-sm">View Project</a>
-            </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="screenshots/home3.png" alt="ZipLink">
-            </div>
-            <div class="project-content">
-              <h3>ZipLink</h3>
-              <p>Secure peer-to-peer file sharing platform with password protection and QR code generation for easy access</p>
-              <div class="project-tags">
-                <span>Node.js</span>
-                <span>Express</span>
-                <span>QR Code API</span>
+          <div class="col-lg-4 col-md-6">
+              <div class="project-showcase position-relative overflow-hidden rounded-3 glass-card">
+                  <img src="screenshots/home3.png" alt="ZipLink" class="img-fluid w-100">
+                  <div class="project-overlay">
+                      <h3 class="text-white">ZipLink</h3>
+                      <p class="text-white text-center px-3">Secure peer-to-peer file sharing platform with password protection and QR code generation</p>
+                      <a href="https://github.com/rimuru2725/ZipLink" target="_blank" class="btn btn-accent">View Project</a>
+                  </div>
               </div>
-              <a href="https://github.com/rimuru2725/ZipLink" class="btn btn-outline-light btn-sm">View Project</a>
-            </div>
           </div>
-        </div>
       </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <section id="contact" class="contact">
     <div class="container">
@@ -690,56 +768,57 @@ h1, h2, h3, h4, h5, h6 {
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    // Initialize AOS
-        AOS.init({
-        duration: 800,
-        once: true,
-         offset: 100
-        });
+    // Scroll Progress Indicator
+    window.addEventListener('scroll', () => {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
+        scrollProgress.style.width = `${scrollPercentage}%`;
+    });
 
-// Custom cursor
-                document.addEventListener('DOMContentLoaded', () => {
-          const cursor = document.querySelector('.cursor');
-          const cursorFollower = document.querySelector('.cursor-follower');
+    // Custom Cursor
+    document.addEventListener('DOMContentLoaded', () => {
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
 
-          document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', (e) => {
             cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
             cursorFollower.style.transform = `translate3d(${e.clientX - 15}px, ${e.clientY - 15}px, 0)`;
-          });
+        });
 
-          document.addEventListener('mousedown', () => {
+        document.addEventListener('mousedown', () => {
             cursor.style.transform = 'scale(0.8)';
             cursorFollower.style.transform = 'scale(0.8)';
-          });
+        });
 
-          document.addEventListener('mouseup', () => {
+        document.addEventListener('mouseup', () => {
             cursor.style.transform = 'scale(1)';
             cursorFollower.style.transform = 'scale(1)';
-          });
         });
+    });
 
-        // Typed.js initialization
-        const typed = new Typed('.typed-text', {
-          strings: ['a Full Stack Developer', 'a UI/UX Designer', 'a Problem Solver'],
-          typeSpeed: 50,
-          backSpeed: 30,
-          backDelay: 2000,
-          loop: true
-        });
+    // Typed.js Initialization
+    const typed = new Typed('.typed-text', {
+        strings: ['a Full Stack Developer', 'a UI/UX Designer', 'a Problem Solver'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true
+    });
 
-        // Navbar scroll effect
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 100) {
+    // Navbar Scroll Effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
             header.classList.add('scrolled');
-          } else {
+        } else {
             header.classList.remove('scrolled');
-          }
-        });
+        }
+    });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
@@ -750,96 +829,106 @@ h1, h2, h3, h4, h5, h6 {
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
             window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
+                top: offsetPosition,
+                behavior: 'smooth'
             });
 
-            // Close mobile menu if open
+            // Close mobile menu
             const navbarCollapse = document.querySelector('.navbar-collapse');
             if (navbarCollapse.classList.contains('show')) {
-              navbarCollapse.classList.remove('show');
+                navbarCollapse.classList.remove('show');
             }
-          });
         });
+    });
 
-        // Active navigation link update on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
+    // Active Navigation Link Update
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-        window.addEventListener('scroll', () => {
-          let current = '';
-          sections.forEach(section => {
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             if (window.pageYOffset >= sectionTop - 150) {
-              current = section.getAttribute('id');
+                current = section.getAttribute('id');
             }
-          });
-
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-              link.classList.add('active');
-            }
-          });
         });
 
-        // Skill bars animation
-        const skillBars = document.querySelectorAll('.skill-progress');
-        const animateSkillBars = () => {
-          skillBars.forEach(bar => {
-            const progress = bar.getAttribute('data-progress');
-            bar.style.width = `${progress}%`;
-          });
-        };
-
-        // Animate skill bars when they come into view
-        const skillsSection = document.querySelector('.skills');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateSkillBars();
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
             }
-          });
-        }, { threshold: 0.5 });
+        });
+    });
 
-        if (skillsSection) {
-          observer.observe(skillsSection);
+    // Interactive Skill Radar Chart
+    const ctx = document.getElementById('skillRadarChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Programming', 'Web Dev', 'Algorithms', 'Problem Solving', 'Design'],
+            datasets: [{
+                label: 'Skills Proficiency',
+                data: [85, 80, 90, 85, 75],
+                backgroundColor: 'rgba(2, 121, 76, 0.2)',
+                borderColor: 'var(--accent-color)',
+                pointBackgroundColor: 'var(--accent-color)'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: { display: false },
+                    grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                }
+            }
         }
+    });
 
-        // Form submission handling
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-          contactForm.addEventListener('submit', async (e) => {
+    // Project Hover Effects
+    document.querySelectorAll('.project-showcase').forEach(project => {
+        project.addEventListener('mouseenter', () => {
+            project.querySelector('.project-overlay').style.opacity = '1';
+        });
+        
+        project.addEventListener('mouseleave', () => {
+            project.querySelector('.project-overlay').style.opacity = '0';
+        });
+    });
+
+    // Form Submission Handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
             
             try {
-              // Simulate form submission
-              await new Promise(resolve => setTimeout(resolve, 1000));
-              
-              // Show success message
-              alert('Message sent successfully!');
-              contactForm.reset();
+                // Simulate form submission
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Show success message
+                alert('Message sent successfully!');
+                contactForm.reset();
             } catch (error) {
-              alert('Error sending message. Please try again.');
+                alert('Error sending message. Please try again.');
             }
-          });
-        }
-
-        // Project hover effect
-        document.querySelectorAll('.project-card').forEach(card => {
-          card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-          });
-          
-          card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-          });
         });
+    }
 
-  </script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
 </body>
 </html>
