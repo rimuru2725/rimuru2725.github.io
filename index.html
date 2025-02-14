@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vivek's Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek's Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -17,16 +17,18 @@
 
     <!-- Three.js for 3D effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<!-- GSAP for smooth animations -->
+
+    <!-- GSAP for smooth animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<!-- Split Type for text animations -->
+
+    <!-- Split Type for text animations -->
     <script src="https://unpkg.com/split-type"></script>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Meta Tags for SEO -->
     <meta name="description" content="Vivek Sharma - Full Stack Developer Portfolio">
@@ -37,233 +39,244 @@
     <meta property="og:title" content="Vivek Sharma - Portfolio">
     <meta property="og:description" content="Portfolio of Vivek Sharma - Full Stack Developer">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-url.com">
+    <meta property="og:image" content="https://your-portfolio-url.com/og-image.jpg">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
-  <div class="parallax-bg"></div>
-  <div class="scroll-progress"></div>
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+    <div id="particles-js" class="particles-container"></div>
+    <div class="parallax-bg"></div>
+    <div class="scroll-progress"></div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-  <header class="header fixed-top">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="logo" href="#home">Vivek Sharma<span class="accent">.</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="logo" href="#home">Vivek<span class="accent">.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto nav-links">
-            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
-    </nav>
-  </header>
-
-  <section id="home" class="hero" style="padding-top: 80px;">
-    <div class="container">
-      <div class="row align-items-center min-vh-100">
-        <div class="col-lg-8 mx-auto text-center">
-          <h1 class="display-3 fw-bold" data-aos="fade-up">
-            <span class="d-block">Hello, I'm VIVEK</span>
-            <span class="accent typed-text"></span>
-          </h1>
-          <p class="lead mt-4" data-aos="fade-up" data-aos-delay="200">
-            A Computer Science Engineering student passionate about creating innovative solutions through code
-          </p>
-          <div class="mt-5" data-aos="fade-up" data-aos-delay="400">
-            <a href="#projects" class="btn btn-outline-light btn-lg me-3">View My Work</a>
-            <a href="https://drive.google.com/file/d/1d2oxXY2BkAQQnMw67MA3VUDDyyi6xQOW/view?usp=sharing" class="btn btn-accent btn-lg"> My Resume</a>
-          </div>
-          <div class="social-icons mt-5" data-aos="fade-up" data-aos-delay="600">
-            <a href="https://github.com/rimuru2725" class="social-icon" target="_blank" title="GitHub">
-              <i class="bi bi-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" class="social-icon" target="_blank" title="LinkedIn">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="mailto:vivek27082005@gmail.com" class="social-icon" title="Email">
-              <i class="bi bi-envelope-fill"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <div class="mouse"></div>
-      </div>
     </div>
-  </section>
+</nav>
+    </header>
 
-  <section id="about" class="about">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6" data-aos="fade-right">
-          <h2 class="section-title">About Me</h2>
-          <p class="lead">Turning Ideas into Reality through Code</p>
-          <p>I'm a Computer Science Engineering student at Chandigarh Group of Colleges, Landran. My expertise spans Java, Python, and C++, with a strong foundation in data structures and algorithms. I'm passionate about web development and have hands-on experience with modern frameworks like Flask and React.</p>
-          <div class="mt-4">
-            <a href="https://github.com/rimuru2725" class="social-link"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" class="social-link"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <div class="about-image">
-            <img src="screenshots/image.png" alt="Workspace" class="img-fluid rounded-3">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="skills py-5">
-    <div class="container">
-        <h2 class="section-title text-center mb-4">My Skills</h2>
-        <div class="row">
-            <div class="col-lg-6">
-                <canvas class="skill-radar" id="skillRadarChart"></canvas>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
+                            Hello, I'm <span class="accent">Vivek</span>
+                            <br>
+                            <span class="typed-text"></span>
+                        </h1>
+                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                            A Computer Science Engineering student passionate about creating innovative solutions through code
+                        </p>
+                        <div class="animate__animated animate__fadeInUp animate__delay-2s">
+                            <a href="#projects" class="btn btn-outline-light btn-lg me-3">View My Work</a>
+                            <a href="https://drive.google.com/file/d/1E8lKuSnuHplGXV84-P4jyD0bbirz9r3V/view?usp=sharing" class="btn btn-accent btn-lg" target="_blank">Download CV</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse"></div>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="glass-card p-3 text-center hover-lift">
-                            <h4>Programming</h4>
-                            <p>Java, Python, C++</p>
+        </section>
+
+        <section id="about" class="about py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <h2 class="section-title mb-4">About Me</h2>
+                        <p class="lead mb-4">Turning Ideas into Reality through Code</p>
+                        <p class="mb-4">I'm a Computer Science Engineering student at Chandigarh Group of Colleges, Landran. My expertise spans Java, Python, and C++, with a strong foundation in data structures and algorithms. I'm passionate about web development and have hands-on experience with modern frameworks like Flask and React.</p>
+                        <div class="social-icons">
+                            <a href="https://github.com/rimuru2725" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
+                            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                            <a href="mailto:vikysharma644@gmail.com" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="glass-card p-3 text-center hover-lift">
-                            <h4>Web Development</h4>
-                            <p>HTML, CSS, JavaScript</p>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="glass-card p-3 text-center hover-lift">
-                            <h4>Core Competencies</h4>
-                            <p>Data Structures, Algorithms, Problem Solving</p>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="about-image">
+                            <img src="screenshots/image.png" alt="Vivek Sharma" class="img-fluid rounded-3 shadow-lg">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<section id="projects" class="projects py-5">
-  <div class="container">
-      <h2 class="section-title text-center mb-4">Featured Projects</h2>
-      <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-              <div class="project-showcase position-relative overflow-hidden rounded-3 glass-card">
-                  <img src="screenshots/home1.png" alt="FitForge" class="img-fluid w-100">
-                  <div class="project-overlay">
-                      <h3 class="text-white">FitForge</h3>
-                      <p class="text-white text-center px-3">AI-powered fitness platform with personalized workout plans and health metrics tracking</p>
-                      <a href="https://github.com/rimuru2725/FitForge" target="_blank" class="btn btn-accent">View Project</a>
+        <section id="skills" class="skills py-5">
+          <div class="container">
+              <h2 class="section-title text-center mb-5">My Skills</h2>
+              <div class="row">
+                  <div class="col-lg-6 mb-4">
+                      <canvas id="skillChart" width="400" height="400"></canvas>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="row g-4">
+                          <div class="col-md-6">
+                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up">
+                                  <i class="bi bi-code-slash skill-icon"></i>
+                                  <h4 class="mb-3">Programming Languages</h4>
+                                  <p>C++, Java, Python</p>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up" data-aos-delay="100">
+                                  <i class="bi bi-laptop skill-icon"></i>
+                                  <h4 class="mb-3">Web Technologies</h4>
+                                  <p>HTML, CSS, JavaScript, Node.js, Express</p>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up" data-aos-delay="200">
+                                  <i class="bi bi-database skill-icon"></i>
+                                  <h4 class="mb-3">Databases & Tools</h4>
+                                  <p>MySQL, MongoDB, Git, Bootstrap</p>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up" data-aos-delay="300">
+                                  <i class="bi bi-gear skill-icon"></i>
+                                  <h4 class="mb-3">Core Competencies</h4>
+                                  <p>DSA, OOP, Cloud Computing, REST APIs</p>
+                              </div>
+                          </div>
+                      </div>
                   </div>
               </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-              <div class="project-showcase position-relative overflow-hidden rounded-3 glass-card">
-                  <img src="screenshots/home2.png" alt="HealthGuardian" class="img-fluid w-100">
-                  <div class="project-overlay">
-                      <h3 class="text-white">HealthGuardian</h3>
-                      <p class="text-white text-center px-3">Real-time medical guidance platform with hospital mapping and emergency SOS alerts</p>
-                      <a href="https://github.com/rimuru2725/HealthGuardian" target="_blank" class="btn btn-accent">View Project</a>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <div class="project-showcase position-relative overflow-hidden rounded-3 glass-card">
-                  <img src="screenshots/home3.png" alt="ZipLink" class="img-fluid w-100">
-                  <div class="project-overlay">
-                      <h3 class="text-white">ZipLink</h3>
-                      <p class="text-white text-center px-3">Secure peer-to-peer file sharing platform with password protection and QR code generation</p>
-                      <a href="https://github.com/rimuru2725/ZipLink" target="_blank" class="btn btn-accent">View Project</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
+      </section>
+      
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="section-title text-center" data-aos="fade-up">Get In Touch</h2>
-          <form class="contact-form" data-aos="fade-up" data-aos-delay="200">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                  <label for="name">Your Name</label>
+      <section id="projects" class="projects py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="screenshots/home1.png" alt="FitForge Project" class="img-fluid">
+                        </div>
+                        <div class="project-content p-4">
+                            <h3 class="mb-3">FitForge</h3>
+                            <p class="mb-3">A comprehensive fitness platform featuring AI-powered workout plans, nutrition guidance, and health metrics tracking. Integrates with API Ninjas and Spoonacular for detailed nutritional information and workout recommendations.</p>
+                            <div class="project-tags mb-3">
+                                <span class="badge bg-primary me-2">Python</span>
+                                <span class="badge bg-secondary me-2">Flask</span>
+                                <span class="badge bg-info me-2">MongoDB</span>
+                                <span class="badge bg-success">Chart.js</span>
+                            </div>
+                            <a href="https://github.com/rimuru2725/FitForge" class="btn btn-outline-light btn-sm">View Project</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                  <label for="email">Your Email</label>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="screenshots/home2.png" alt="HealthGuardian Project" class="img-fluid">
+                        </div>
+                        <div class="project-content p-4">
+                            <h3 class="mb-3">HealthGuardian</h3>
+                            <p class="mb-3">An emergency response healthcare platform featuring real-time medical guidance, hospital mapping with OpenStreetMap API, and SOS alerts via Twilio integration for immediate emergency assistance.</p>
+                            <div class="project-tags mb-3">
+                                <span class="badge bg-primary me-2">Node.js</span>
+                                <span class="badge bg-secondary me-2">Express</span>
+                                <span class="badge bg-info me-2">Bootstrap</span>
+                                <span class="badge bg-success">APIs</span>
+                            </div>
+                            <a href="https://github.com/rimuru2725/HealthGuardian" class="btn btn-outline-light btn-sm">View Project</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-12">
-                <div class="form-floating">
-                  <input type="text" class="form-control" id="subject" placeholder="Subject" required>
-                  <label for="subject">Subject</label>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="screenshots/home3.png" alt="ZipLink Project" class="img-fluid">
+                        </div>
+                        <div class="project-content p-4">
+                            <h3 class="mb-3">ZipLink</h3>
+                            <p class="mb-3">A secure file-sharing platform with end-to-end encryption, password protection, and QR code generation. Features real-time file tracking and automatic cleanup system for enhanced security.</p>
+                            <div class="project-tags mb-3">
+                                <span class="badge bg-primary me-2">Node.js</span>
+                                <span class="badge bg-secondary me-2">Express</span>
+                                <span class="badge bg-info">Tailwind CSS</span>
+                            </div>
+                            <a href="https://github.com/rimuru2725/ZipLink" class="btn btn-outline-light btn-sm">View Project</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-12">
-                <div class="form-floating">
-                  <textarea class="form-control" id="message" placeholder="Your Message" style="height: 150px" required></textarea>
-                  <label for="message">Your Message</label>
-                </div>
-              </div>
-              <div class="col-12 text-center">
-                <button type="submit" class="btn btn-accent btn-lg">Send Message</button>
-              </div>
             </div>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <p class="mb-0">&copy; 2024 Vivek's Portfolio. All rights reserved.</p>
+        <section id="contact" class="contact py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Get In Touch</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form class="contact-form" data-aos="fade-up">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-accent btn-lg">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Vivek's Portfolio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-envelope-fill"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 text-md-end">
-          <div class="social-links">
-            <a href="https://github.com/rimuru2725" class="social-link" target="_blank">
-              <i class="bi bi-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" class="social-link" target="_blank">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="mailto:vivek27082005@gmail.com" class="social-link">
-              <i class="bi bi-envelope-fill"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- Add this before your script.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="script.js"></script>
-  <!-- EmailJS SDK -->
-
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>
+
