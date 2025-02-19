@@ -5,6 +5,7 @@
   --text-color: #ffffff;
   --text-muted: #888888;
   --glow-color: rgba(2, 121, 76, 0.5);
+  cursor: none;
 }
 
 * {
