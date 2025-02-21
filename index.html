@@ -118,10 +118,65 @@
             </div>
         </section>
 
+        <!-- Add this section after About section in index.html -->
+        <section id="timeline" class="timeline py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">My Journey</h2>
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-content">
+                            <h3>B.Tech in Computer Science Engineering</h3>
+                            <h4>Chandigarh Group of Colleges, Landran</h4>
+                            <p>Maintaining 8.14 SGPA while developing expertise in full-stack development, DSA, and cloud computing. Qualified for Smart India Hackathon 2024.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2021 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>Intermediate (CBSE)</h3>
+                            <h4>Zee Litera Valley School, Bhiwani</h4>
+                            <p>Achieved 82% in senior secondary education while developing foundational programming skills and earning certifications in Data Analytics and Python.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2019 - 2020</div>
+                        <div class="timeline-content">
+                            <h3>Matriculation (CBSE)</h3>
+                            <h4>Zee Litera Valley School, Bhiwani</h4>
+                            <p>Secured 95.2% in class 10th boards, demonstrating strong academic foundation and analytical thinking skills.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Professional Development</h3>
+                            <h4>Technical Certifications</h4>
+                            <p>Acquired certifications from industry leaders including AWS Cloud Operations, Machine Learning (SimpliLearn), and achieved 5-star badge on HackerRank in Java and Problem Solving.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="skills" class="skills py-5">
           <div class="container">
               <h2 class="section-title text-center mb-5">My Skills</h2>
               <div class="row">
+                
                   <div class="col-lg-6 mb-4">
                       <canvas id="skillChart" width="400" height="400"></canvas>
                   </div>
@@ -223,30 +278,98 @@
         </div>
     </section>
 
+        <!-- Enhanced Contact Section -->
         <section id="contact" class="contact py-5">
             <div class="container">
                 <h2 class="section-title text-center mb-5">Get In Touch</h2>
+                
+                <!-- Contact Cards -->
+                <div class="row justify-content-center mb-5" data-aos="fade-up">
+                    <div class="col-md-4 mb-4">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope-paper-heart"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>vikysharma644@gmail.com</p>
+                            <a href="mailto:vikysharma644@gmail.com" class="contact-link">Send Email</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </div>
+                            <h3>LinkedIn</h3>
+                            <p>Connect with me</p>
+                            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank" class="contact-link">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="bi bi-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <p>Check my repositories</p>
+                            <a href="https://github.com/rimuru2725" target="_blank" class="contact-link">View Projects</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Contact Form -->
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <form class="contact-form" data-aos="fade-up">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                        <div class="contact-form-wrapper" data-aos="fade-up">
+                            <form class="contact-form">
+                                <div class="form-floating mb-4">
+                                    <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
+                                    <label for="nameInput">Your Name</label>
+                                    <div class="form-progress"></div>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                <div class="form-floating mb-4">
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Your Email" required>
+                                    <label for="emailInput">Your Email</label>
+                                    <div class="form-progress"></div>
                                 </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Subject" required>
+                                <div class="form-floating mb-4">
+                                    <input type="text" class="form-control" id="subjectInput" placeholder="Subject" required>
+                                    <label for="subjectInput">Subject</label>
+                                    <div class="form-progress"></div>
                                 </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                <div class="form-floating mb-4">
+                                    <textarea class="form-control" id="messageInput" placeholder="Your Message" style="height: 150px" required></textarea>
+                                    <label for="messageInput">Your Message</label>
+                                    <div class="form-progress"></div>
                                 </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-accent btn-lg">Send Message</button>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-accent btn-lg submit-btn">
+                                        <span class="submit-text">Send Message</span>
+                                        <span class="submit-icon"><i class="bi bi-send"></i></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Modal -->
+            <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center py-4">
+                            <div class="success-animation">
+                                <div class="checkmark">
+                                    <div class="checkmark-circle"></div>
+                                    <div class="checkmark-stem"></div>
+                                    <div class="checkmark-kick"></div>
                                 </div>
                             </div>
-                        </form>
+                            <h3 class="mt-4">Message Sent Successfully!</h3>
+                            <p>Thank you for reaching out. I'll get back to you soon.</p>
+                            <button type="button" class="btn btn-accent mt-3" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -275,6 +398,16 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Add to index.html head section - before the closing </head> tag -->
+    <!-- Add Three.js OrbitControls -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    <!-- Add Lottie animation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <!-- Add ScrollReveal for better scroll animations -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- Add TagCanvas for interactive tag cloud -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tagcanvas/2.9/jquery.tagcanvas.min.js"></script>
     <script src="script.js" defer></script>
 </body>
 
