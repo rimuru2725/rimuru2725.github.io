@@ -840,3 +840,258 @@ body {
 .modal-body p {
   color: var(--text-muted);
 }
+
+/* Add these styles to your existing CSS */
+
+/* Stats Container Styles */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(26, 26, 26, 0.7);
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: linear-gradient(45deg, transparent, rgba(2, 121, 76, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-item:hover::before {
+  opacity: 1;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* Skills Showcase Styles */
+.skills-showcase {
+  background: rgba(26, 26, 26, 0.7);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-progress {
+  padding: 1rem;
+}
+
+.skill-title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.progress-bar-container {
+  position: relative;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent-color), #04a66b);
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
+}
+
+.progress-indicator {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(2, 121, 76, 0.5);
+}
+
+.progress-percentage {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+      padding: 1rem;
+  }
+  
+  .stat-item {
+      flex: 0 0 calc(50% - 1rem);
+  }
+  
+  .skills-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* About Section Enhancements */
+.about-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.about-image {
+  transition: transform 0.3s ease;
+}
+
+.about-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.about-image-container:hover .about-image {
+  transform: scale(1.05);
+}
+
+.about-image-container:hover .about-image-overlay {
+  transform: translateY(0);
+}
+
+.overlay-content h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-content p {
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.key-highlights {
+  margin: 2rem 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: rgba(26, 26, 26, 0.7);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateX(10px);
+}
+
+.highlight-item i {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.social-icon {
+  position: relative;
+}
+
+.social-icon[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover[data-tooltip]:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Skill Card Enhancements */
+.skill-level {
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.level-indicator {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease;
+}
+
+.skill-card:hover .level-indicator {
+  transform: scaleX(1);
+}
+
+/* Additional Responsive Styles */
+@media (max-width: 768px) {
+  .about-image-overlay {
+      transform: translateY(0);
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent);
+  }
+  
+  .highlight-item {
+      padding: 0.5rem;
+  }
+  
+  .highlight-item i {
+      font-size: 1.2rem;
+  }
+}

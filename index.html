@@ -103,18 +103,74 @@
                         <h2 class="section-title mb-4">About Me</h2>
                         <p class="lead mb-4">Turning Ideas into Reality through Code</p>
                         <p class="mb-4">I'm a Computer Science Engineering student at Chandigarh Group of Colleges, Landran. My expertise spans Java, Python, and C++, with a strong foundation in data structures and algorithms. I'm passionate about web development and have hands-on experience with modern frameworks like Flask and React.</p>
+                        
+                        <!-- Key Highlights -->
+                        <div class="key-highlights mb-4">
+                            <div class="highlight-item">
+                                <i class="bi bi-lightning-charge"></i>
+                                <span>Quick Learner & Problem Solver</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="bi bi-code-square"></i>
+                                <span>Full Stack Developer</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="bi bi-graph-up"></i>
+                                <span>Data Structures & Algorithms Enthusiast</span>
+                            </div>
+                        </div>
+        
+                        <!-- Social Links -->
                         <div class="social-icons">
-                            <a href="https://github.com/rimuru2725" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
-                            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                            <a href="mailto:vikysharma644@gmail.com" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+                            <a href="https://github.com/rimuru2725" target="_blank" class="social-icon" data-tooltip="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank" class="social-icon" data-tooltip="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="mailto:your.email@example.com" class="social-icon" data-tooltip="Email">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
-                        <div class="about-image">
-                            <img src="screenshots/image.jpg" alt="Vivek Sharma" class="img-fluid rounded-3 shadow-lg">
+                        <div class="about-image-container">
+                            <div class="about-image">
+                                <img src="screenshots/image.jpg" alt="Vivek Sharma" class="img-fluid rounded-3 shadow-lg">
+                            </div>
+                            <div class="about-image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Vivek Sharma</h3>
+                                    <p>Full Stack Developer</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+        
+                <!-- Statistics Section -->
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="stats-container" data-aos="fade-up">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="1">0</div>
+                                <div class="stat-label">Year To Graduation</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="10">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="7">0</div>
+                                <div class="stat-label">Certifications</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="150">0</div>
+                                <div class="stat-label">Problems Solved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
             </div>
         </section>
 
@@ -173,48 +229,144 @@
         </section>
 
         <section id="skills" class="skills py-5">
-          <div class="container">
-              <h2 class="section-title text-center mb-5">My Skills</h2>
-              <div class="row">
+            <div class="container">
+                <h2 class="section-title text-center mb-5" data-aos="fade-up">My Skills</h2>
                 
-                  <div class="col-lg-6 mb-4">
-                      <canvas id="skillChart" width="400" height="400"></canvas>
-                  </div>
-                  <div class="col-lg-6">
-                      <div class="row g-4">
-                          <div class="col-md-6">
-                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up">
-                                  <i class="bi bi-code-slash skill-icon"></i>
-                                  <h4 class="mb-3">Programming Languages</h4>
-                                  <p>C++, Java, Python</p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up" data-aos-delay="100">
-                                  <i class="bi bi-laptop skill-icon"></i>
-                                  <h4 class="mb-3">Web Technologies</h4>
-                                  <p>HTML, CSS, JavaScript, Node.js, Express</p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up" data-aos-delay="200">
-                                  <i class="bi bi-database skill-icon"></i>
-                                  <h4 class="mb-3">Databases & Tools</h4>
-                                  <p>MySQL, MongoDB, Git, Bootstrap</p>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="skill-card p-4 rounded-3 h-100" data-aos="fade-up" data-aos-delay="300">
-                                  <i class="bi bi-gear skill-icon"></i>
-                                  <h4 class="mb-3">Core Competencies</h4>
-                                  <p>DSA, OOP, Cloud Computing, REST APIs</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+                <!-- Main Skills Grid -->
+                <div class="row g-4 mb-5">
+                    <!-- Skill Chart -->
+                    <div class="col-lg-6 mb-4" data-aos="fade-right">
+                        <div class="skill-chart-container">
+                            <canvas id="skillChart" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+        
+                    <!-- Skill Cards -->
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="skill-card p-4 rounded-3 h-100">
+                                    <i class="bi bi-code-slash skill-icon"></i>
+                                    <h4 class="mb-3">Programming Languages</h4>
+                                    <p>C++, Java, Python</p>
+                                    <div class="skill-level">
+                                        <div class="level-indicator" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card p-4 rounded-3 h-100">
+                                    <i class="bi bi-laptop skill-icon"></i>
+                                    <h4 class="mb-3">Web Technologies</h4>
+                                    <p>HTML, CSS, JavaScript, Node.js, Express</p>
+                                    <div class="skill-level">
+                                        <div class="level-indicator" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card p-4 rounded-3 h-100">
+                                    <i class="bi bi-database skill-icon"></i>
+                                    <h4 class="mb-3">Databases & Tools</h4>
+                                    <p>MySQL, MongoDB, Git, Bootstrap</p>
+                                    <div class="skill-level">
+                                        <div class="level-indicator" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card p-4 rounded-3 h-100">
+                                    <i class="bi bi-gear skill-icon"></i>
+                                    <h4 class="mb-3">Core Competencies</h4>
+                                    <p>DSA, OOP, Cloud Computing, REST APIs</p>
+                                    <div class="skill-level">
+                                        <div class="level-indicator" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Detailed Skills Progress -->
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="skills-showcase" data-aos="fade-up">
+                            <h3 class="text-center mb-4">Technical Proficiency</h3>
+                            <div class="skills-grid">
+                                <div class="skill-progress">
+                                    <div class="skill-title">Frontend Development</div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" data-progress="85">
+                                            <div class="progress-indicator"></div>
+                                        </div>
+                                        <span class="progress-percentage">85%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-title">Backend Development</div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" data-progress="80">
+                                            <div class="progress-indicator"></div>
+                                        </div>
+                                        <span class="progress-percentage">80%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-title">Database Management</div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" data-progress="75">
+                                            <div class="progress-indicator"></div>
+                                        </div>
+                                        <span class="progress-percentage">75%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-title">Cloud Computing</div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" data-progress="70">
+                                            <div class="progress-indicator"></div>
+                                        </div>
+                                        <span class="progress-percentage">70%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Certifications -->
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="certifications" data-aos="fade-up">
+                            <h3 class="text-center mb-4">Certifications</h3>
+                            <div class="certification-grid">
+                                <div class="certification-item">
+                                    <i class="bi bi-award"></i>
+                                    <h4>AWS Cloud Operations</h4>
+                                    <p>Amazon Web Services</p>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="bi bi-award"></i>
+                                    <h4>Machine Learning</h4>
+                                    <p>SimpliLearn</p>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="bi bi-award"></i>
+                                    <h4>Java Programming</h4>
+                                    <p>HackerRank</p>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="bi bi-award"></i>
+                                    <h4>Problem Solving</h4>
+                                    <p>HackerRank</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
       
 
       <section id="projects" class="projects py-5">
