@@ -1,145 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek's Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    
+    <title>Vivek Sharma — Full Stack Developer Portfolio</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    
-    <!-- Animate.css for Enhanced Animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
-    <!-- AOS (Animate on Scroll) -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- Three.js for 3D effects -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <!-- GSAP for smooth animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-    <!-- Split Type for text animations -->
-    <script src="https://unpkg.com/split-type"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="Vivek Sharma - Full Stack Developer Portfolio">
-    <meta name="keywords" content="Vivek Sharma, Full Stack Developer, Web Development, Portfolio">
+    <link rel="icon" href="data:,">
+
+    <!-- SEO Meta -->
+    <meta name="description"
+        content="Vivek Sharma — Full Stack Developer specializing in Java, Python, C++ and modern web technologies. CSE student at CGC Landran.">
+    <meta name="keywords" content="Vivek Sharma, Full Stack Developer, Web Development, Portfolio, Java, Python, C++">
     <meta name="author" content="Vivek Sharma">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Vivek Sharma - Portfolio">
-    <meta property="og:description" content="Portfolio of Vivek Sharma - Full Stack Developer">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Vivek Sharma — Full Stack Developer">
+    <meta property="og:description" content="Portfolio of Vivek Sharma — Full Stack Developer & CSE Student">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-portfolio-url.com">
-    <meta property="og:image" content="https://your-portfolio-url.com/og-image.jpg">
 
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-theme">
-    <div id="particles-js" class="particles-container"></div>
-    <div class="parallax-bg"></div>
-    <div class="scroll-progress"></div>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
 
-    <header class="header fixed-top">
-        <nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="logo" href="#home">Vivek<span class="accent">.</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
+<body>
+    <!-- Three.js Canvas -->
+    <canvas id="heroCanvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" id="navbar">
+        <div class="nav-bar">
+            <a class="nav-logo" href="#home">V<span>.</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </div>
-</nav>
-    </header>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active" data-section="home">Home</a>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#journey" class="nav-link" data-section="journey">Journey</a>
+            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+    </nav>
 
     <main>
+        <!-- ============ HERO ============ -->
         <section id="home" class="hero">
-            <div class="container">
-                <div class="row align-items-center min-vh-100">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
-                            Hello, I'm <span class="accent">Vivek</span>
-                            <br>
-                            <span class="typed-text"></span>
-                        </h1>
-                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-                            A Computer Science Engineering student passionate about creating innovative solutions through code
-                        </p>
-                        <div class="animate__animated animate__fadeInUp animate__delay-2s">
-                            <a href="#projects" class="btn btn-outline-light btn-lg me-3">View My Work</a>
-                            <a href="https://drive.google.com/file/d/1Q3bo_Fi6RSoyN8H1bbNwDxJe_WWFz8eR/view?usp=sharing" class="btn btn-accent btn-lg" target="_blank">Download CV</a>
-                        </div>
+            <div class="hero-glow hero-glow--green"></div>
+            <div class="hero-glow hero-glow--teal"></div>
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge" id="heroBadge">
+                        <span class="badge-pulse"></span>
+                        <span>Full Stack Developer</span>
+                    </div>
+                    <h1 class="hero-title" id="heroTitle">
+                        Hello, I'm <span class="gradient-text">Vivek</span>
+                    </h1>
+                    <div class="hero-typed" id="heroTyped">
+                        <span class="typed-text"></span>
+                    </div>
+                    <p class="hero-desc" id="heroDesc">
+                        A Computer Science Engineering student passionate about creating innovative solutions through
+                        code
+                    </p>
+                    <div class="hero-actions" id="heroActions">
+                        <a href="#projects" class="btn btn--primary" id="btnViewWork">
+                            <span>View My Work</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1Q3bo_Fi6RSoyN8H1bbNwDxJe_WWFz8eR/view?usp=sharing"
+                            class="btn btn--glass" target="_blank" id="btnCV">
+                            <span>Download CV</span>
+                            <i class="bi bi-download"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="scroll-indicator">
-                    <div class="mouse"></div>
+                <div class="hero-visual" id="heroVisual">
+                    <img src="screenshots/hero_developer.png" alt="Vivek — Developer Illustration" class="hero-img">
                 </div>
+            </div>
+            <div class="scroll-hint" id="scrollHint">
+                <div class="mouse-icon">
+                    <div class="mouse-wheel"></div>
+                </div>
+                <span>Scroll Down</span>
             </div>
         </section>
 
-        <section id="about" class="about py-5">
+        <!-- ============ ABOUT ============ -->
+        <section id="about" class="section about">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <h2 class="section-title mb-4">About Me</h2>
-                        <p class="lead mb-4">Turning Ideas into Reality through Code</p>
-                        <p class="mb-4">I'm a Computer Science Engineering student at Chandigarh Group of Colleges, Landran. My expertise spans Java, Python, and C++, with a strong foundation in data structures and algorithms. I'm passionate about web development and have hands-on experience with modern frameworks like Flask and React.</p>
-                        
-                        <!-- Key Highlights -->
-                        <div class="key-highlights mb-4">
-                            <div class="highlight-item">
-                                <i class="bi bi-lightning-charge"></i>
+                <div class="section-header">
+                    <span class="section-tag">Introduction</span>
+                    <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="about-lead">Turning Ideas into Reality through Code</p>
+                        <p class="about-body">I'm a Computer Science Engineering student at Chandigarh Group of
+                            Colleges, Landran. My expertise spans Java, Python, and C++, with a strong foundation in
+                            data structures and algorithms. I'm passionate about web development and have hands-on
+                            experience with modern frameworks like Flask and React.</p>
+
+                        <div class="highlights">
+                            <div class="highlight-card">
+                                <div class="highlight-icon"><i class="bi bi-lightning-charge-fill"></i></div>
                                 <span>Quick Learner & Problem Solver</span>
                             </div>
-                            <div class="highlight-item">
-                                <i class="bi bi-code-square"></i>
+                            <div class="highlight-card">
+                                <div class="highlight-icon"><i class="bi bi-code-slash"></i></div>
                                 <span>Full Stack Developer</span>
                             </div>
-                            <div class="highlight-item">
-                                <i class="bi bi-graph-up"></i>
-                                <span>Data Structures & Algorithms Enthusiast</span>
+                            <div class="highlight-card">
+                                <div class="highlight-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                                <span>DSA Enthusiast</span>
                             </div>
                         </div>
-        
-                        <!-- Social Links -->
-                        <div class="social-icons">
-                            <a href="https://github.com/rimuru2725" target="_blank" class="social-icon" data-tooltip="GitHub">
+
+                        <div class="social-row">
+                            <a href="https://github.com/rimuru2725" target="_blank" class="social-btn"
+                                aria-label="GitHub">
                                 <i class="bi bi-github"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank" class="social-icon" data-tooltip="LinkedIn">
+                            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank"
+                                class="social-btn" aria-label="LinkedIn">
                                 <i class="bi bi-linkedin"></i>
                             </a>
-                            <a href="mailto:your.email@example.com" class="social-icon" data-tooltip="Email">
+                            <a href="mailto:vikysharma644@gmail.com" class="social-btn" aria-label="Email">
                                 <i class="bi bi-envelope-fill"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="about-image-container">
-                            <div class="about-image">
-                                <img src="screenshots/image.jpg" alt="Vivek Sharma" class="img-fluid rounded-3 shadow-lg">
-                            </div>
-                            <div class="about-image-overlay">
-                                <div class="overlay-content">
+
+                    <div class="about-visual">
+                        <div class="profile-card-3d" id="profileCard">
+                            <div class="profile-card-inner">
+                                <img src="screenshots/image.jpg" alt="Vivek Sharma — Full Stack Developer"
+                                    class="profile-img">
+                                <div class="profile-card-glow"></div>
+                                <div class="profile-overlay">
                                     <h3>Vivek Sharma</h3>
                                     <p>Full Stack Developer</p>
                                 </div>
@@ -147,440 +167,401 @@
                         </div>
                     </div>
                 </div>
-        
-                <!-- Statistics Section -->
-                <div class="row mt-5">
-                    <div class="col-lg-12">
-                        <div class="stats-container" data-aos="fade-up">
-                            <div class="stat-item">
-                                <div class="stat-number" data-count="1">0</div>
-                                <div class="stat-label">Year To Graduation</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" data-count="10">0</div>
-                                <div class="stat-label">Projects Completed</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" data-count="7">0</div>
-                                <div class="stat-label">Certifications</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" data-count="150">0</div>
-                                <div class="stat-label">Problems Solved</div>
-                            </div>
-                        </div>
+
+                <!-- Stats -->
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-card">
+                        <div class="stat-value" data-count="1">0</div>
+                        <div class="stat-label">Year To Graduation</div>
                     </div>
-                </div>        
+                    <div class="stat-card">
+                        <div class="stat-value" data-count="10">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" data-count="7">0</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" data-count="150">0</div>
+                        <div class="stat-label">Problems Solved</div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Add this section after About section in index.html -->
-        <section id="timeline" class="timeline py-5">
+        <!-- ============ JOURNEY / TIMELINE ============ -->
+        <section id="journey" class="section journey">
             <div class="container">
-                <h2 class="section-title text-center mb-5">My Journey</h2>
-                <div class="timeline-wrapper">
-                    <div class="timeline-line"></div>
-                    
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item" data-aos="fade-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2022 - Present</div>
-                        <div class="timeline-content">
+                <div class="section-header">
+                    <span class="section-tag">Experience</span>
+                    <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="timeline" id="timeline">
+                    <div class="timeline-track">
+                        <div class="timeline-track-fill" id="timelineTrackFill"></div>
+                    </div>
+
+                    <div class="timeline-item timeline-item--left">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-ping"></div>
+                        </div>
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date">2022 – Present</span>
                             <h3>B.Tech in Computer Science Engineering</h3>
                             <h4>Chandigarh Group of Colleges, Landran</h4>
-                            <p>Maintaining 8.14 SGPA while developing expertise in full-stack development, DSA, and cloud computing. Qualified for Smart India Hackathon 2024.</p>
+                            <p>Maintaining 8.14 SGPA while developing expertise in full-stack development, DSA, and
+                                cloud computing. Qualified for Smart India Hackathon 2024.</p>
                         </div>
                     </div>
-                    
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2021 - 2022</div>
-                        <div class="timeline-content">
-                            <h3>Intermediate (CBSE)</h3>
-                            <h4>Zee Litera Valley School, Bhiwani</h4>
-                            <p>Achieved 82% in senior secondary education while developing foundational programming skills and earning certifications in Data Analytics and Python.</p>
+
+                    <div class="timeline-item timeline-item--right">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-ping"></div>
                         </div>
-                    </div>
-                    
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2019 - 2020</div>
-                        <div class="timeline-content">
-                            <h3>Matriculation (CBSE)</h3>
-                            <h4>Zee Litera Valley School, Bhiwani</h4>
-                            <p>Secured 95.2% in class 10th boards, demonstrating strong academic foundation and analytical thinking skills.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Timeline Item 4 -->
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2023 - 2024</div>
-                        <div class="timeline-content">
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date">2023 – 2024</span>
                             <h3>Professional Development</h3>
                             <h4>Technical Certifications</h4>
-                            <p>Acquired certifications from industry leaders including AWS Cloud Operations, Machine Learning (SimpliLearn), and achieved 5-star badge on HackerRank in Java and Problem Solving.</p>
+                            <p>Acquired certifications from industry leaders including AWS Cloud Operations, Machine
+                                Learning (SimpliLearn), and achieved 5-star badge on HackerRank in Java and Problem
+                                Solving.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item timeline-item--left">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-ping"></div>
+                        </div>
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date">2021 – 2022</span>
+                            <h3>Intermediate (CBSE)</h3>
+                            <h4>Zee Litera Valley School, Bhiwani</h4>
+                            <p>Achieved 82% in senior secondary education while developing foundational programming
+                                skills and earning certifications in Data Analytics and Python.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item timeline-item--right">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-ping"></div>
+                        </div>
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date">2019 – 2020</span>
+                            <h3>Matriculation (CBSE)</h3>
+                            <h4>Zee Litera Valley School, Bhiwani</h4>
+                            <p>Secured 95.2% in class 10th boards, demonstrating strong academic foundation and
+                                analytical thinking skills.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="skills py-5">
+        <!-- ============ SKILLS ============ -->
+        <section id="skills" class="section skills">
             <div class="container">
-                <h2 class="section-title text-center mb-5" data-aos="fade-up">My Skills</h2>
-                
-                <!-- Main Skills Grid -->
-                <div class="row g-4 mb-5">
-                    <!-- Skill Chart -->
-                    <div class="col-lg-6 mb-4" data-aos="fade-right">
-                        <div class="skill-chart-container">
-                            <canvas id="skillChart" width="400" height="400"></canvas>
-                        </div>
+                <div class="section-header">
+                    <span class="section-tag">Expertise</span>
+                    <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-layout">
+                    <!-- 3D Skill Sphere -->
+                    <div class="sphere-wrapper">
+                        <div class="skill-sphere" id="skillSphere"></div>
                     </div>
-        
+
                     <!-- Skill Cards -->
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="skill-card p-4 rounded-3 h-100">
-                                    <i class="bi bi-code-slash skill-icon"></i>
-                                    <h4 class="mb-3">Programming Languages</h4>
-                                    <p>C++, Java, Python</p>
-                                    <div class="skill-level">
-                                        <div class="level-indicator" style="width: 85%"></div>
-                                    </div>
-                                </div>
+                    <div class="skill-cards">
+                        <div class="skill-card glass-card" id="skillCard1">
+                            <div class="skill-card-icon"><i class="bi bi-code-slash"></i></div>
+                            <h4>Programming Languages</h4>
+                            <p>C++, Java, Python</p>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="85"></div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="skill-card p-4 rounded-3 h-100">
-                                    <i class="bi bi-laptop skill-icon"></i>
-                                    <h4 class="mb-3">Web Technologies</h4>
-                                    <p>HTML, CSS, JavaScript, Node.js, Express</p>
-                                    <div class="skill-level">
-                                        <div class="level-indicator" style="width: 90%"></div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="skill-card glass-card" id="skillCard2">
+                            <div class="skill-card-icon"><i class="bi bi-laptop"></i></div>
+                            <h4>Web Technologies</h4>
+                            <p>HTML, CSS, JavaScript, Node.js, Express</p>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="90"></div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="skill-card p-4 rounded-3 h-100">
-                                    <i class="bi bi-database skill-icon"></i>
-                                    <h4 class="mb-3">Databases & Tools</h4>
-                                    <p>MySQL, MongoDB, Git, Bootstrap</p>
-                                    <div class="skill-level">
-                                        <div class="level-indicator" style="width: 80%"></div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="skill-card glass-card" id="skillCard3">
+                            <div class="skill-card-icon"><i class="bi bi-database"></i></div>
+                            <h4>Databases & Tools</h4>
+                            <p>MySQL, MongoDB, Git, Bootstrap</p>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="80"></div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="skill-card p-4 rounded-3 h-100">
-                                    <i class="bi bi-gear skill-icon"></i>
-                                    <h4 class="mb-3">Core Competencies</h4>
-                                    <p>DSA, OOP, Cloud Computing, REST APIs</p>
-                                    <div class="skill-level">
-                                        <div class="level-indicator" style="width: 85%"></div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="skill-card glass-card" id="skillCard4">
+                            <div class="skill-card-icon"><i class="bi bi-gear-wide-connected"></i></div>
+                            <h4>Core Competencies</h4>
+                            <p>DSA, OOP, Cloud Computing, REST APIs</p>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="85"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
-                <!-- Detailed Skills Progress -->
-                <div class="row mt-5">
-                    <div class="col-lg-12">
-                        <div class="skills-showcase" data-aos="fade-up">
-                            <h3 class="text-center mb-4">Technical Proficiency</h3>
-                            <div class="skills-grid">
-                                <div class="skill-progress">
-                                    <div class="skill-title">Frontend Development</div>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar" data-progress="85">
-                                            <div class="progress-indicator"></div>
-                                        </div>
-                                        <span class="progress-percentage">85%</span>
-                                    </div>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-title">Backend Development</div>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar" data-progress="80">
-                                            <div class="progress-indicator"></div>
-                                        </div>
-                                        <span class="progress-percentage">80%</span>
-                                    </div>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-title">Database Management</div>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar" data-progress="75">
-                                            <div class="progress-indicator"></div>
-                                        </div>
-                                        <span class="progress-percentage">75%</span>
-                                    </div>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-title">Cloud Computing</div>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar" data-progress="70">
-                                            <div class="progress-indicator"></div>
-                                        </div>
-                                        <span class="progress-percentage">70%</span>
-                                    </div>
-                                </div>
+
+                <!-- Proficiency Bars -->
+                <div class="proficiency-section" id="proficiencySection">
+                    <h3 class="proficiency-title">Technical Proficiency</h3>
+                    <div class="proficiency-grid">
+                        <div class="proficiency-item">
+                            <div class="proficiency-label">
+                                <span>Frontend Development</span>
+                                <span class="proficiency-pct">85%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="proficiency-item">
+                            <div class="proficiency-label">
+                                <span>Backend Development</span>
+                                <span class="proficiency-pct">80%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="proficiency-item">
+                            <div class="proficiency-label">
+                                <span>Database Management</span>
+                                <span class="proficiency-pct">75%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="proficiency-item">
+                            <div class="proficiency-label">
+                                <span>Cloud Computing</span>
+                                <span class="proficiency-pct">70%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-progress="70"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Certifications -->
-                <div class="row mt-5">
-                    <div class="col-lg-12">
-                        <div class="certifications" data-aos="fade-up">
-                            <h3 class="text-center mb-4">Certifications</h3>
-                            <div class="certification-grid">
-                                <div class="certification-item">
-                                    <i class="bi bi-award"></i>
-                                    <h4>AWS Cloud Operations</h4>
-                                    <p>Amazon Web Services</p>
-                                </div>
-                                <div class="certification-item">
-                                    <i class="bi bi-award"></i>
-                                    <h4>Machine Learning</h4>
-                                    <p>SimpliLearn</p>
-                                </div>
-                                <div class="certification-item">
-                                    <i class="bi bi-award"></i>
-                                    <h4>Java Programming</h4>
-                                    <p>HackerRank</p>
-                                </div>
-                                <div class="certification-item">
-                                    <i class="bi bi-award"></i>
-                                    <h4>Problem Solving</h4>
-                                    <p>HackerRank</p>
-                                </div>
+                <div class="certs-grid" id="certsGrid">
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+                        <h4>AWS Cloud Operations</h4>
+                        <p>Amazon Web Services</p>
+                    </div>
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+                        <h4>Machine Learning</h4>
+                        <p>SimpliLearn</p>
+                    </div>
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+                        <h4>Java Programming</h4>
+                        <p>HackerRank ★★★★★</p>
+                    </div>
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+                        <h4>Problem Solving</h4>
+                        <p>HackerRank ★★★★★</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- FitForge -->
+                    <div class="project-card" id="projectFitForge">
+                        <div class="project-card-shimmer"></div>
+                        <div class="project-img-wrap">
+                            <img src="screenshots/home1.png" alt="FitForge — AI Fitness Platform" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>FitForge</h3>
+                            <p>A comprehensive fitness platform featuring AI-powered workout plans, nutrition guidance,
+                                and health metrics tracking. Integrates with API Ninjas and Spoonacular for detailed
+                                nutritional information.</p>
+                            <div class="project-tags">
+                                <span>Python</span><span>Flask</span><span>MongoDB</span><span>Chart.js</span>
                             </div>
+                            <a href="https://github.com/rimuru2725/FitForge" class="project-link" target="_blank"
+                                id="linkFitForge">
+                                <span>View Project</span>
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- HealthGuardian -->
+                    <div class="project-card" id="projectHealthGuardian">
+                        <div class="project-card-shimmer"></div>
+                        <div class="project-img-wrap">
+                            <img src="screenshots/home2.png" alt="HealthGuardian — Emergency Healthcare" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>HealthGuardian</h3>
+                            <p>An emergency response healthcare platform featuring real-time medical guidance, hospital
+                                mapping with OpenStreetMap API, and SOS alerts via Twilio integration.</p>
+                            <div class="project-tags">
+                                <span>Node.js</span><span>Express</span><span>Bootstrap</span><span>APIs</span>
+                            </div>
+                            <a href="https://github.com/rimuru2725/HealthGuardian" class="project-link" target="_blank"
+                                id="linkHealthGuardian">
+                                <span>View Project</span>
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SplitEase -->
+                    <div class="project-card" id="projectSplitEase">
+                        <div class="project-card-shimmer"></div>
+                        <div class="project-img-wrap">
+                            <img src="screenshots/home4.png" alt="SplitEase — Smart Expense Tracker" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>SplitEase</h3>
+                            <p>A smart group expense tracker enabling seamless expense splitting. Integrated budget
+                                tracking with alerts and planned Razorpay payment settlements.</p>
+                            <div class="project-tags">
+                                <span>Node.js</span><span>Express.js</span><span>Bootstrap</span><span>SQLite</span>
+                            </div>
+                            <a href="https://github.com/rimuru2725/SplitEase" class="project-link" target="_blank"
+                                id="linkSplitEase">
+                                <span>View Project</span>
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ZipLink -->
+                    <div class="project-card" id="projectZipLink">
+                        <div class="project-card-shimmer"></div>
+                        <div class="project-img-wrap">
+                            <img src="screenshots/home3.png" alt="ZipLink — Secure File Sharing" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>ZipLink</h3>
+                            <p>A secure file-sharing platform with end-to-end encryption, password protection, and QR
+                                code generation. Features real-time file tracking and automatic cleanup.</p>
+                            <div class="project-tags">
+                                <span>Node.js</span><span>Express.js</span><span>Tailwind</span><span>JavaScript</span>
+                            </div>
+                            <a href="https://github.com/rimuru2725/ZipLink" class="project-link" target="_blank"
+                                id="linkZipLink">
+                                <span>View Project</span>
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-      
 
-      <section id="projects" class="projects py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Featured Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card" data-aos="fade-up">
-                        <div class="project-image">
-                            <img src="screenshots/home1.png" alt="FitForge Project" class="img-fluid">
-                        </div>
-                        <div class="project-content p-4">
-                            <h3 class="mb-3">FitForge</h3>
-                            <p class="mb-3">A comprehensive fitness platform featuring AI-powered workout plans, nutrition guidance, and health metrics tracking. Integrates with API Ninjas and Spoonacular for detailed nutritional information and workout recommendations.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge bg-primary me-2">Python</span>
-                                <span class="badge bg-secondary me-2">Flask</span>
-                                <span class="badge bg-info me-2">MongoDB</span>
-                                <span class="badge bg-success">Chart.js</span>
-                            </div>
-                            <a href="https://github.com/rimuru2725/FitForge" class="btn btn-outline-light btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-image">
-                            <img src="screenshots/home2.png" alt="HealthGuardian Project" class="img-fluid">
-                        </div>
-                        <div class="project-content p-4">
-                            <h3 class="mb-3">HealthGuardian</h3>
-                            <p class="mb-3">An emergency response healthcare platform featuring real-time medical guidance, hospital mapping with OpenStreetMap API, and SOS alerts via Twilio integration for immediate emergency assistance.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge bg-primary me-2">Node.js</span>
-                                <span class="badge bg-secondary me-2">Express</span>
-                                <span class="badge bg-info me-2">Bootstrap</span>
-                                <span class="badge bg-success">APIs</span>
-                            </div>
-                            <a href="https://github.com/rimuru2725/HealthGuardian" class="btn btn-outline-light btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-image">
-                            <img src="screenshots/home4.png" alt="HealthGuardian Project" class="img-fluid">
-                        </div>
-                        <div class="project-content p-4">
-                            <h3 class="mb-3">SplitEase</h3>
-                            <p class="mb-3">A Smart group expense tracker enabling seamless expense splitting). Integrated budget tracking with alerts and planned Razorpay payment settlements.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge bg-primary me-2">Node.js</span>
-                                <span class="badge bg-secondary me-2">Express.js</span>
-                                <span class="badge bg-info me-2">Bootstrap</span>
-                                <span class="badge bg-success">SQLite</span>
-                            </div>
-                            <a href="https://github.com/rimuru2725/SplitEase" class="btn btn-outline-light btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="project-image">
-                            <img src="screenshots/home3.png" alt="ZipLink Project" class="img-fluid">
-                        </div>
-                        <div class="project-content p-4">
-                            <h3 class="mb-3">ZipLink</h3>
-                            <p class="mb-3">A secure file-sharing platform with end-to-end encryption, password protection, and QR code generation. Features real-time file tracking and automatic cleanup system for enhanced security.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge bg-primary me-2">Node.js</span>
-                                <span class="badge bg-secondary me-2">Express.js</span>
-                                <span class="badge bg-info">Tailwind CSS</span>
-                                <span class="badge bg-info">JavaScript</span>
-                            </div>
-                            <a href="https://github.com/rimuru2725/ZipLink" class="btn btn-outline-light btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Enhanced Contact Section -->
-        <section id="contact" class="contact py-5">
+        <!-- ============ CONTACT ============ -->
+        <section id="contact" class="section contact">
             <div class="container">
-                <h2 class="section-title text-center mb-5">Get In Touch</h2>
-                
-                <!-- Contact Cards -->
-                <div class="row justify-content-center mb-5" data-aos="fade-up">
-                    <div class="col-md-4 mb-4">
-                        <div class="contact-info-card">
-                            <div class="contact-icon">
-                                <i class="bi bi-envelope-paper-heart"></i>
-                            </div>
-                            <h3>Email</h3>
-                            <p>vikysharma644@gmail.com</p>
-                            <a href="mailto:vikysharma644@gmail.com" class="contact-link">Send Email</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="contact-info-card">
-                            <div class="contact-icon">
-                                <i class="bi bi-linkedin"></i>
-                            </div>
-                            <h3>LinkedIn</h3>
-                            <p>Connect with me</p>
-                            <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank" class="contact-link">View Profile</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="contact-info-card">
-                            <div class="contact-icon">
-                                <i class="bi bi-github"></i>
-                            </div>
-                            <h3>GitHub</h3>
-                            <p>Check my repositories</p>
-                            <a href="https://github.com/rimuru2725" target="_blank" class="contact-link">View Projects</a>
-                        </div>
-                    </div>
+                <div class="section-header">
+                    <span class="section-tag">Say Hello</span>
+                    <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                    <div class="section-line"></div>
                 </div>
 
-                <!-- Enhanced Contact Form -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="contact-form-wrapper" data-aos="fade-up">
-                            <form class="contact-form">
-                                <div class="form-floating mb-4">
-                                    <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
-                                    <label for="nameInput">Your Name</label>
-                                    <div class="form-progress"></div>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <input type="email" class="form-control" id="emailInput" placeholder="Your Email" required>
-                                    <label for="emailInput">Your Email</label>
-                                    <div class="form-progress"></div>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <input type="text" class="form-control" id="subjectInput" placeholder="Subject" required>
-                                    <label for="subjectInput">Subject</label>
-                                    <div class="form-progress"></div>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <textarea class="form-control" id="messageInput" placeholder="Your Message" style="height: 150px" required></textarea>
-                                    <label for="messageInput">Your Message</label>
-                                    <div class="form-progress"></div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-accent btn-lg submit-btn">
-                                        <span class="submit-text">Send Message</span>
-                                        <span class="submit-icon"><i class="bi bi-send"></i></span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                <div class="contact-cards" id="contactCards">
+                    <a href="mailto:vikysharma644@gmail.com" class="contact-card glass-card" id="contactEmail">
+                        <div class="contact-card-icon"><i class="bi bi-envelope-paper-heart-fill"></i></div>
+                        <h3>Email</h3>
+                        <p>vikysharma644@gmail.com</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank"
+                        class="contact-card glass-card" id="contactLinkedIn">
+                        <div class="contact-card-icon"><i class="bi bi-linkedin"></i></div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect with me</p>
+                    </a>
+                    <a href="https://github.com/rimuru2725" target="_blank" class="contact-card glass-card"
+                        id="contactGitHub">
+                        <div class="contact-card-icon"><i class="bi bi-github"></i></div>
+                        <h3>GitHub</h3>
+                        <p>Check my repositories</p>
+                    </a>
                 </div>
-            </div>
 
-            <!-- Success Modal -->
-            <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body text-center py-4">
-                            <div class="success-animation">
-                                <div class="checkmark">
-                                    <div class="checkmark-circle"></div>
-                                    <div class="checkmark-stem"></div>
-                                    <div class="checkmark-kick"></div>
-                                </div>
-                            </div>
-                            <h3 class="mt-4">Message Sent Successfully!</h3>
-                            <p>Thank you for reaching out. I'll get back to you soon.</p>
-                            <button type="button" class="btn btn-accent mt-3" data-bs-dismiss="modal">Close</button>
+                <div class="contact-form-wrap glass-card" id="contactFormWrap">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="nameInput" placeholder=" " required autocomplete="name">
+                            <label for="nameInput">Your Name</label>
+                            <div class="form-line"></div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <input type="email" id="emailInput" placeholder=" " required autocomplete="email">
+                            <label for="emailInput">Your Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subjectInput" placeholder=" " required>
+                            <label for="subjectInput">Subject</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="messageInput" placeholder=" " rows="5" required></textarea>
+                            <label for="messageInput">Your Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--submit" id="submitBtn">
+                            <span>Send Message</span>
+                            <i class="bi bi-send-fill"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2024 Vivek's Portfolio. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="bi bi-github"></i></a>
-                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="bi bi-envelope-fill"></i></a>
-                    </div>
-                </div>
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="currentYear"></span> Vivek Sharma. Crafted with <i class="bi bi-heart-fill"
+                    style="color:var(--accent-violet)"></i></p>
+            <div class="footer-links">
+                <a href="https://github.com/rimuru2725" target="_blank" aria-label="GitHub"><i
+                        class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/vivek-sharma-06219a28b/" target="_blank" aria-label="LinkedIn"><i
+                        class="bi bi-linkedin"></i></a>
+                <a href="mailto:vikysharma644@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- ============ SCRIPTS ============ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- Add to index.html head section - before the closing </head> tag -->
-    <!-- Add Three.js OrbitControls -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
-    <!-- Add Lottie animation library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
-    <!-- Add ScrollReveal for better scroll animations -->
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <!-- Add TagCanvas for interactive tag cloud -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tagcanvas/2.9/jquery.tagcanvas.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
-
