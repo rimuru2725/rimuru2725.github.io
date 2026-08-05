@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek Sharma — Full Stack Developer Portfolio</title>
+    <title>Vivek Sharma — DevOps Engineer Portfolio</title>
 
     <!-- Fonts -->
     <link
@@ -19,14 +19,34 @@
 
     <!-- SEO Meta -->
     <meta name="description"
-        content="Vivek Sharma — Full Stack Developer specializing in Java, Python, C++ and modern web technologies. CSE student at CGC Landran.">
+        content="Vivek Sharma — DevOps Engineer focused on cloud engineering, automation, and platform reliability.">
     <meta name="keywords" content="Vivek Sharma, Full Stack Developer, Web Development, Portfolio, Java, Python, C++">
     <meta name="author" content="Vivek Sharma">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Vivek Sharma — Full Stack Developer">
-    <meta property="og:description" content="Portfolio of Vivek Sharma — Full Stack Developer & CSE Student">
+    <meta property="og:title" content="Vivek Sharma — DevOps Engineer">
+    <meta property="og:description" content="Portfolio of Vivek Sharma — DevOps & Cloud Engineer focused on automation and platform engineering.">
     <meta property="og:type" content="website">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vivek Sharma",
+      "jobTitle": "DevOps Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "msg global Solutions"
+      },
+      "url": "https://rimuru2725.github.io",
+      "sameAs": [
+        "https://github.com/rimuru2725",
+        "https://www.linkedin.com/in/vivek-sharma-06219a28b/"
+      ],
+      "knowsAbout": ["DevOps", "Cloud Engineering", "AWS", "Kubernetes", "Docker", "Terraform", "GitLab CI/CD", "Python", "Node.js"]
+    }
+    </script>
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -54,10 +74,26 @@
         <div class="nav-links" id="navLinks">
             <a href="#home" class="nav-link active" data-section="home">Home</a>
             <a href="#about" class="nav-link" data-section="about">About</a>
-            <a href="#journey" class="nav-link" data-section="journey">Journey</a>
+            <a href="#journey" class="nav-link" data-section="journey">Experience</a>
             <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            <a href="#infrastructure" class="nav-link" data-section="infrastructure">Pipeline</a>
             <a href="#projects" class="nav-link" data-section="projects">Projects</a>
             <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            <a href="https://drive.google.com/file/d/1s27WrxsVYWHomYKZEhq-xdw8_v-rSieZ/view?usp=sharing" id="navResume" class="nav-link" data-section="resume" target="_blank">Resume</a>
+        </div>
+        <div class="nav-controls">
+            <button class="nav-icon-btn" id="btnTerminalToggle" title="DevOps Shell (Ctrl + ~)">
+                <i class="bi bi-terminal-fill"></i>
+            </button>
+            <button class="nav-icon-btn" id="btnCmdPaletteToggle" title="Command Palette (Ctrl + K)">
+                <i class="bi bi-command"></i>
+            </button>
+            <button class="nav-icon-btn" id="btnThemeToggle" title="Toggle Theme">
+                <i class="bi bi-palette-fill"></i>
+            </button>
+            <button class="nav-icon-btn" id="btnSoundToggle" title="Toggle Sound Haptics">
+                <i class="bi bi-volume-mute-fill"></i>
+            </button>
         </div>
     </nav>
 
@@ -70,7 +106,7 @@
                 <div class="hero-content">
                     <div class="hero-badge" id="heroBadge">
                         <span class="badge-pulse"></span>
-                        <span>Full Stack Developer</span>
+                        <span>🟢 DevOps Engineer @ msg global Solutions</span>
                     </div>
                     <h1 class="hero-title" id="heroTitle">
                         Hello, I'm <span class="gradient-text">Vivek</span>
@@ -79,18 +115,20 @@
                         <span class="typed-text"></span>
                     </div>
                     <p class="hero-desc" id="heroDesc">
-                        A Computer Science Engineering student passionate about creating innovative solutions through
-                        code
+                        Turning infrastructure into software through automation, cloud engineering, and modern DevOps practices.
                     </p>
                     <div class="hero-actions" id="heroActions">
                         <a href="#projects" class="btn btn--primary" id="btnViewWork">
                             <span>View My Work</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
-                        <a href="https://drive.google.com/file/d/1Q3bo_Fi6RSoyN8H1bbNwDxJe_WWFz8eR/view?usp=sharing"
-                            class="btn btn--glass" target="_blank" id="btnCV">
-                            <span>Download CV</span>
-                            <i class="bi bi-download"></i>
+                        <button class="btn btn--secondary" id="btnHeroCLI">
+                            <i class="bi bi-terminal"></i>
+                            <span>Launch CLI Shell</span>
+                        </button>
+                        <a href="https://drive.google.com/file/d/1s27WrxsVYWHomYKZEhq-xdw8_v-rSieZ/view?usp=sharing" class="btn btn--glass" id="btnResume" target="_blank">
+                            <span>Resume</span>
+                            <i class="bi bi-file-earmark-person"></i>
                         </a>
                     </div>
                 </div>
@@ -117,24 +155,25 @@
 
                 <div class="about-grid">
                     <div class="about-text">
-                        <p class="about-lead">Turning Ideas into Reality through Code</p>
-                        <p class="about-body">I'm a Computer Science Engineering student at Chandigarh Group of
-                            Colleges, Landran. My expertise spans Java, Python, and C++, with a strong foundation in
-                            data structures and algorithms. I'm passionate about web development and have hands-on
-                            experience with modern frameworks like Flask and React.</p>
+                        <p class="about-lead">Engineer who enjoys solving infrastructure problems through automation and scalable cloud technologies</p>
+                        <p class="about-body">I graduated with a B.Tech in Computer Science Engineering from Chandigarh Group of Colleges, Landran (2026, CGPA: 8.4). I enjoy designing CI/CD pipelines, containerizing applications, provisioning cloud infrastructure with Terraform, and improving deployment reliability. My recent experience includes an internship and now a full-time role at msg global Solutions focused on cloud & infrastructure automation.</p>
 
                         <div class="highlights">
                             <div class="highlight-card">
-                                <div class="highlight-icon"><i class="bi bi-lightning-charge-fill"></i></div>
-                                <span>Quick Learner & Problem Solver</span>
+                                <div class="highlight-icon"><i class="bi bi-gear-fill"></i></div>
+                                <span>⚙️ Automation First</span>
                             </div>
                             <div class="highlight-card">
-                                <div class="highlight-icon"><i class="bi bi-code-slash"></i></div>
-                                <span>Full Stack Developer</span>
+                                <div class="highlight-icon"><i class="bi bi-cloud-fill"></i></div>
+                                <span>☁️ Cloud Native</span>
                             </div>
                             <div class="highlight-card">
                                 <div class="highlight-icon"><i class="bi bi-graph-up-arrow"></i></div>
-                                <span>DSA Enthusiast</span>
+                                <span>🚀 DevOps Engineering</span>
+                            </div>
+                            <div class="highlight-card">
+                                <div class="highlight-icon"><i class="bi bi-book-half"></i></div>
+                                <span>📈 Continuous Learning</span>
                             </div>
                         </div>
 
@@ -171,8 +210,8 @@
                 <!-- Stats -->
                 <div class="stats-grid" id="statsGrid">
                     <div class="stat-card">
-                        <div class="stat-value" data-count="1">0</div>
-                        <div class="stat-label">Year To Graduation</div>
+                        <div class="stat-value">2026</div>
+                        <div class="stat-label">Year of Graduation</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value" data-count="10">0</div>
@@ -183,8 +222,8 @@
                         <div class="stat-label">Certifications</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-value" data-count="150">0</div>
-                        <div class="stat-label">Problems Solved</div>
+                        <div class="stat-value" data-count="200">0</div>
+                        <div class="stat-label">Problems Solved (LeetCode)</div>
                     </div>
                 </div>
             </div>
@@ -195,7 +234,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">Experience</span>
-                    <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+                    <h2 class="section-title">Professional <span class="gradient-text">Journey</span></h2>
                     <div class="section-line"></div>
                 </div>
 
@@ -205,55 +244,62 @@
                     </div>
 
                     <div class="timeline-item timeline-item--left">
-                        <div class="timeline-dot">
-                            <div class="timeline-dot-ping"></div>
-                        </div>
+                        <div class="timeline-dot"><div class="timeline-dot-ping"></div></div>
                         <div class="timeline-card glass-card">
-                            <span class="timeline-date">2022 – Present</span>
-                            <h3>B.Tech in Computer Science Engineering</h3>
-                            <h4>Chandigarh Group of Colleges, Landran</h4>
-                            <p>Maintaining 8.14 SGPA while developing expertise in full-stack development, DSA, and
-                                cloud computing. Qualified for Smart India Hackathon 2024.</p>
+                            <span class="timeline-date">2026 – Present</span>
+                            <h3>DevOps Engineer</h3>
+                            <h4>msg global Solutions</h4>
+                            <p>Working on cloud infrastructure, GitLab CI/CD pipelines, Kubernetes deployments, Terraform provisioning, and release automation across production infrastructure teams.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item timeline-item--right">
-                        <div class="timeline-dot">
-                            <div class="timeline-dot-ping"></div>
-                        </div>
+                        <div class="timeline-dot"><div class="timeline-dot-ping"></div></div>
                         <div class="timeline-card glass-card">
-                            <span class="timeline-date">2023 – 2024</span>
-                            <h3>Professional Development</h3>
-                            <h4>Technical Certifications</h4>
-                            <p>Acquired certifications from industry leaders including AWS Cloud Operations, Machine
-                                Learning (SimpliLearn), and achieved 5-star badge on HackerRank in Java and Problem
-                                Solving.</p>
+                            <span class="timeline-date">Feb 2026 – Aug 2026</span>
+                            <h3>DevOps &amp; Infrastructure Intern</h3>
+                            <h4>msg global Solutions</h4>
+                            <p>Contributed to CI/CD pipelines, Kubernetes deployments, Terraform provisioning, AWS environments, and artifact management with JFrog.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item timeline-item--left">
-                        <div class="timeline-dot">
-                            <div class="timeline-dot-ping"></div>
-                        </div>
+                        <div class="timeline-dot"><div class="timeline-dot-ping"></div></div>
                         <div class="timeline-card glass-card">
-                            <span class="timeline-date">2021 – 2022</span>
-                            <h3>Intermediate (CBSE)</h3>
-                            <h4>Zee Litera Valley School, Bhiwani</h4>
-                            <p>Achieved 82% in senior secondary education while developing foundational programming
-                                skills and earning certifications in Data Analytics and Python.</p>
+                            <span class="timeline-date">Feb 2026 – May 2026</span>
+                            <h3>SAP Backend Intern</h3>
+                            <h4>SAP Business Technology Platform</h4>
+                            <p>Developed backend services using ABAP RAP and OData services within enterprise Agile workflows.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item timeline-item--right">
-                        <div class="timeline-dot">
-                            <div class="timeline-dot-ping"></div>
-                        </div>
+                        <div class="timeline-dot"><div class="timeline-dot-ping"></div></div>
                         <div class="timeline-card glass-card">
-                            <span class="timeline-date">2019 – 2020</span>
-                            <h3>Matriculation (CBSE)</h3>
-                            <h4>Zee Litera Valley School, Bhiwani</h4>
-                            <p>Secured 95.2% in class 10th boards, demonstrating strong academic foundation and
-                                analytical thinking skills.</p>
+                            <span class="timeline-date">2026</span>
+                            <h3>B.Tech — Computer Science Engineering</h3>
+                            <h4>Chandigarh Group of Colleges, Landran</h4>
+                            <p>Graduated 2026 — CGPA: 8.4</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item timeline-item--left">
+                        <div class="timeline-dot"><div class="timeline-dot-ping"></div></div>
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date">2024</span>
+                            <h3>Smart India Hackathon</h3>
+                            <h4>National Finalist</h4>
+                            <p>Qualified as a national finalist collaborating as a backend developer on a real-world problem statement.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item timeline-item--right">
+                        <div class="timeline-dot"><div class="timeline-dot-ping"></div></div>
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date">2023 – 2025</span>
+                            <h3>Professional Certifications</h3>
+                            <h4>AWS • ML • Node.js • Data Analytics</h4>
+                            <p>Earned industry certifications while building practical cloud and backend engineering skills.</p>
                         </div>
                     </div>
                 </div>
@@ -269,45 +315,29 @@
                     <div class="section-line"></div>
                 </div>
 
-                <div class="skills-layout">
-                    <!-- 3D Skill Sphere -->
-                    <div class="sphere-wrapper">
-                        <div class="skill-sphere" id="skillSphere"></div>
+                <div class="tech-grid">
+                    <div class="tech-column glass-card">
+                        <h4><i class="bi bi-cloud-fill"></i> Cloud &amp; Infrastructure</h4>
+                        <div class="tech-list">
+                            <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Helm</span><span>Terraform</span><span>Linux</span><span>Nginx</span>
+                        </div>
                     </div>
-
-                    <!-- Skill Cards -->
-                    <div class="skill-cards">
-                        <div class="skill-card glass-card" id="skillCard1">
-                            <div class="skill-card-icon"><i class="bi bi-code-slash"></i></div>
-                            <h4>Programming Languages</h4>
-                            <p>C++, Java, Python</p>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-progress="85"></div>
-                            </div>
+                    <div class="tech-column glass-card">
+                        <h4><i class="bi bi-gear-wide-connected"></i> DevOps &amp; Automation</h4>
+                        <div class="tech-list">
+                            <span>GitLab CI/CD</span><span>Shell Scripting</span><span>Git</span><span>JFrog Artifactory</span><span>CI/CD</span>
                         </div>
-                        <div class="skill-card glass-card" id="skillCard2">
-                            <div class="skill-card-icon"><i class="bi bi-laptop"></i></div>
-                            <h4>Web Technologies</h4>
-                            <p>HTML, CSS, JavaScript, Node.js, Express</p>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-progress="90"></div>
-                            </div>
+                    </div>
+                    <div class="tech-column glass-card">
+                        <h4><i class="bi bi-code-slash"></i> Programming</h4>
+                        <div class="tech-list">
+                            <span>Python</span><span>Java</span><span>JavaScript</span><span>C++</span><span>SQL</span><span>ABAP RAP</span>
                         </div>
-                        <div class="skill-card glass-card" id="skillCard3">
-                            <div class="skill-card-icon"><i class="bi bi-database"></i></div>
-                            <h4>Databases & Tools</h4>
-                            <p>MySQL, MongoDB, Git, Bootstrap</p>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-card glass-card" id="skillCard4">
-                            <div class="skill-card-icon"><i class="bi bi-gear-wide-connected"></i></div>
-                            <h4>Core Competencies</h4>
-                            <p>DSA, OOP, Cloud Computing, REST APIs</p>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-progress="85"></div>
-                            </div>
+                    </div>
+                    <div class="tech-column glass-card">
+                        <h4><i class="bi bi-database-fill"></i> Backend &amp; Databases</h4>
+                        <div class="tech-list">
+                            <span>Flask</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>MySQL</span><span>SQLite</span>
                         </div>
                     </div>
                 </div>
@@ -378,6 +408,99 @@
                         <p>HackerRank ★★★★★</p>
                     </div>
                 </div>
+        </section>
+
+        <!-- ============ INFRASTRUCTURE PIPELINE SHOWCASE ============ -->
+        <section id="infrastructure" class="section infrastructure">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">DevOps Architecture</span>
+                    <h2 class="section-title">Live <span class="gradient-text">Infrastructure Pipeline</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="infra-subtitle">Click any pipeline node to inspect node health, active pods, and live simulated cloud telemetry.</p>
+                
+                <div class="pipeline-container">
+                    <div class="pipeline-flow" id="pipelineFlow">
+                        <div class="pipeline-node active" data-node="git">
+                            <div class="node-icon"><i class="bi bi-git"></i></div>
+                            <div class="node-label">GitLab &amp; GitHub</div>
+                            <div class="node-badge">Source Control</div>
+                            <div class="node-status status-online"></div>
+                        </div>
+                        <div class="pipeline-connector"><div class="connector-pulse"></div></div>
+                        <div class="pipeline-node" data-node="cicd">
+                            <div class="node-icon"><i class="bi bi-play-circle-fill"></i></div>
+                            <div class="node-label">GitLab CI/CD</div>
+                            <div class="node-badge">Build &amp; Test</div>
+                            <div class="node-status status-online"></div>
+                        </div>
+                        <div class="pipeline-connector"><div class="connector-pulse"></div></div>
+                        <div class="pipeline-node" data-node="docker">
+                            <div class="node-icon"><i class="bi bi-box-seam-fill"></i></div>
+                            <div class="node-label">Docker &amp; JFrog</div>
+                            <div class="node-badge">Artifact Registry</div>
+                            <div class="node-status status-online"></div>
+                        </div>
+                        <div class="pipeline-connector"><div class="connector-pulse"></div></div>
+                        <div class="pipeline-node" data-node="terraform">
+                            <div class="node-icon"><i class="bi bi-diagram-3-fill"></i></div>
+                            <div class="node-label">Terraform &amp; Helm</div>
+                            <div class="node-badge">IaC Manifests</div>
+                            <div class="node-status status-online"></div>
+                        </div>
+                        <div class="pipeline-connector"><div class="connector-pulse"></div></div>
+                        <div class="pipeline-node" data-node="k8s">
+                            <div class="node-icon"><i class="bi bi-cpu-fill"></i></div>
+                            <div class="node-label">Kubernetes &amp; AWS</div>
+                            <div class="node-badge">Cloud EKS Cluster</div>
+                            <div class="node-status status-online"></div>
+                        </div>
+                        <div class="pipeline-connector"><div class="connector-pulse"></div></div>
+                        <div class="pipeline-node" data-node="monitoring">
+                            <div class="node-icon"><i class="bi bi-activity"></i></div>
+                            <div class="node-label">Prometheus &amp; Grafana</div>
+                            <div class="node-badge">Observability</div>
+                            <div class="node-status status-online"></div>
+                        </div>
+                    </div>
+
+                    <!-- Inspector Card -->
+                    <div class="inspector-card glass-card" id="inspectorCard">
+                        <div class="inspector-header">
+                            <div class="inspector-title-wrap">
+                                <span class="inspector-dot"></span>
+                                <h3 id="inspectorTitle">GitLab &amp; GitHub — Source Control &amp; Triggers</h3>
+                            </div>
+                            <span class="inspector-tag" id="inspectorTag">HEALTHY • 100% UPTIME</span>
+                        </div>
+                        <div class="inspector-body">
+                            <div class="inspector-stats">
+                                <div class="stat-box">
+                                    <span class="stat-box-label">Node Uptime</span>
+                                    <span class="stat-box-value" id="inspectorUptime">99.99%</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-box-label">Active Triggers</span>
+                                    <span class="stat-box-value" id="inspectorTriggers">12 Webhooks</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-box-label">Latency</span>
+                                    <span class="stat-box-value" id="inspectorLatency">14ms</span>
+                                </div>
+                            </div>
+                            <div class="inspector-terminal">
+                                <div class="term-header">
+                                    <span>node-stream.log</span>
+                                    <span class="term-live"><i class="bi bi-record-fill"></i> LIVE LOG STREAM</span>
+                                </div>
+                                <pre class="term-content" id="inspectorLogs"><code>[2026-08-05 23:58:01] INFO  git.webhook: Commit push detected on branch 'main' (sha: 7f3a8b2)
+[2026-08-05 23:58:02] INFO  pipeline.runner: Initializing runner pool #42...
+[2026-08-05 23:58:03] SUCCESS repo.sync: Multi-branch repository verification clean. Ready for CI build stage.</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -389,92 +512,141 @@
                     <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
                     <div class="section-line"></div>
                 </div>
-                <div class="projects-grid" id="projectsGrid"></div>
-                <!-- SplitEase -->
-                <div class="project-card" id="projectSplitEase">
-                    <div class="project-card-shimmer"></div>
-                    <div class="project-img-wrap">
-                        <img src="screenshots/home4.png" alt="SplitEase — Smart Expense Tracker" loading="lazy">
+
+                <div class="project-controls">
+                    <div class="filter-tabs" id="projectFilterTabs">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="fullstack">AI &amp; Full-Stack</button>
+                        <button class="filter-btn" data-filter="utility">Emergency &amp; Security</button>
                     </div>
-                    <div class="project-body">
-                        <h3>SplitEase</h3>
-                        <p>A smart group expense tracker enabling seamless expense splitting. Integrated budget
-                                tracking with alerts and planned Razorpay payment settlements.</p>
-                        <div class="project-tags">
-                            <span>Node.js</span><span>Express.js</span><span>Bootstrap</span><span>SQLite</span>
-                        </div>
-                        <a href="https://split-ease-ruby.vercel.app/" class="project-link" target="_blank"
-                            id="linkSplitEase">
-                            <span>View Project</span>
-                            <i class="bi bi-arrow-up-right"></i>
-                        </a>
+                    <div class="project-search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" id="projectSearchInput" placeholder="Search by tech or title (e.g., Flask, Express)...">
                     </div>
                 </div>
-
-                
                     <!-- FitForge -->
-                    <div class="project-card" id="projectFitForge">
+                    <div class="project-card" id="projectFitForge" data-category="fullstack" data-id="fitforge">
                         <div class="project-card-shimmer"></div>
                         <div class="project-img-wrap">
                             <img src="screenshots/home1.png" alt="FitForge — AI Fitness Platform" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3>FitForge</h3>
-                            <p>A comprehensive fitness platform featuring AI-powered workout plans, nutrition guidance,
-                                and health metrics tracking. Integrates with API Ninjas and Spoonacular for detailed
-                                nutritional information.</p>
+                            <p class="project-tagline">AI-driven fitness platform with personalized workout and nutrition plans.</p>
+                            <div class="project-section"><strong>The Problem</strong>
+                                <p>Users need tailored plans and easy tracking to stay consistent and healthy.</p>
+                            </div>
+                            <div class="project-section"><strong>My Solution</strong>
+                                <p>Built a Flask backend with ML-powered recommendations and a responsive frontend to track metrics.</p>
+                            </div>
                             <div class="project-tags">
                                 <span>Python</span><span>Flask</span><span>MongoDB</span><span>Chart.js</span>
                             </div>
-                            <a href="https://github.com/rimuru2725/FitForge" class="project-link" target="_blank"
-                                id="linkFitForge">
-                                <span>View Project</span>
-                                <i class="bi bi-arrow-up-right"></i>
-                            </a>
+                            <div class="project-links">
+                                <button class="project-link btn-open-modal" data-id="fitforge"><i class="bi bi-eye"></i> Quick View</button>
+                                <a href="https://github.com/rimuru2725/FitForge" class="project-link" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- HealthGuardian -->
-                    <div class="project-card" id="projectHealthGuardian">
+                    <div class="project-card" id="projectHealthGuardian" data-category="utility" data-id="healthguardian">
                         <div class="project-card-shimmer"></div>
                         <div class="project-img-wrap">
                             <img src="screenshots/home2.png" alt="HealthGuardian — Emergency Healthcare" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3>HealthGuardian</h3>
-                            <p>An emergency response healthcare platform featuring real-time medical guidance, hospital
-                                mapping with OpenStreetMap API, and SOS alerts via Twilio integration.</p>
-                            <div class="project-tags">
-                                <span>Node.js</span><span>Express</span><span>Bootstrap</span><span>APIs</span>
+                            <p class="project-tagline">Emergency healthcare assistant with real-time guidance and hospital mapping.</p>
+                            <div class="project-section"><strong>The Problem</strong>
+                                <p>In emergencies, users need fast access to hospitals and immediate guidance.</p>
                             </div>
-                            <a href="https://github.com/rimuru2725/HealthGuardian" class="project-link" target="_blank"
-                                id="linkHealthGuardian">
-                                <span>View Project</span>
-                                <i class="bi bi-arrow-up-right"></i>
-                            </a>
+                            <div class="project-section"><strong>My Solution</strong>
+                                <p>Integrated mapping APIs, Twilio alerts, and a resilient backend for quick SOS workflows.</p>
+                            </div>
+                            <div class="project-tags">
+                                <span>Node.js</span><span>Express</span><span>OpenStreetMap</span><span>Twilio</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="project-link btn-open-modal" data-id="healthguardian"><i class="bi bi-eye"></i> Quick View</button>
+                                <a href="https://github.com/rimuru2725/HealthGuardian" class="project-link" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- ZipLink -->
-                    <div class="project-card" id="projectZipLink">
+                    <div class="project-card" id="projectZipLink" data-category="utility" data-id="ziplink">
                         <div class="project-card-shimmer"></div>
                         <div class="project-img-wrap">
                             <img src="screenshots/home3.png" alt="ZipLink — Secure File Sharing" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3>ZipLink</h3>
-                            <p>A secure file-sharing platform with end-to-end encryption, password protection, and QR
-                                code generation. Features real-time file tracking and automatic cleanup.</p>
+                            <p class="project-tagline">Secure, temporary file-sharing with encryption and QR-based access.</p>
+                            <div class="project-section"><strong>The Problem</strong>
+                                <p>Users need a simple, secure way to share files without accounts.</p>
+                            </div>
+                            <div class="project-section"><strong>My Solution</strong>
+                                <p>Implemented end-to-end encryption, password protection, and automatic cleanup services.</p>
+                            </div>
                             <div class="project-tags">
                                 <span>Node.js</span><span>Express.js</span><span>Tailwind</span><span>JavaScript</span>
                             </div>
-                            <a href="https://github.com/rimuru2725/ZipLink" class="project-link" target="_blank"
-                                id="linkZipLink">
-                                <span>View Project</span>
-                                <i class="bi bi-arrow-up-right"></i>
-                            </a>
+                            <div class="project-links">
+                                <button class="project-link btn-open-modal" data-id="ziplink"><i class="bi bi-eye"></i> Quick View</button>
+                                <a href="https://github.com/rimuru2725/ZipLink" class="project-link" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- SplitEase -->
+                    <div class="project-card" id="projectSplitEase" data-category="fullstack" data-id="splitease">
+                        <div class="project-card-shimmer"></div>
+                        <div class="project-img-wrap">
+                            <img src="screenshots/home4.png" alt="SplitEase — Smart Expense Tracker" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>SplitEase</h3>
+                            <p class="project-tagline">Group expense tracker designed for simple settlements and budgeting.</p>
+                            <div class="project-section"><strong>The Problem</strong>
+                                <p>Groups struggle to track shared expenses and settle dues transparently.</p>
+                            </div>
+                            <div class="project-section"><strong>My Solution</strong>
+                                <p>Built multi-environment Node.js app with planned payment settlements and budget alerts.</p>
+                            </div>
+                            <div class="project-tags">
+                                <span>Node.js</span><span>Express.js</span><span>Bootstrap</span><span>SQLite</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="project-link btn-open-modal" data-id="splitease"><i class="bi bi-eye"></i> Quick View</button>
+                                <a href="https://split-ease-ruby.vercel.app/" class="project-link" target="_blank"><i class="bi bi-globe"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub / Dev Metrics -->
+                <div class="dev-metrics" id="githubStats">
+                    <div class="section-header">
+                        <span class="section-tag">Metrics</span>
+                        <h2 class="section-title">Dev <span class="gradient-text">Stats</span></h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-card glass-card" id="metricRepos">
+                            <h4>Repositories</h4>
+                            <p class="metric-value">—</p>
+                        </div>
+                        <div class="metric-card glass-card" id="metricFollowers">
+                            <h4>Followers</h4>
+                            <p class="metric-value">—</p>
+                        </div>
+                        <div class="metric-card glass-card" id="metricLanguages">
+                            <h4>Top Languages</h4>
+                            <p class="metric-value">—</p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -505,6 +677,16 @@
                         <div class="contact-card-icon"><i class="bi bi-github"></i></div>
                         <h3>GitHub</h3>
                         <p>Check my repositories</p>
+                    </a>
+                    <a href="https://wa.me/919518029569" target="_blank" class="contact-card glass-card" id="contactWhatsApp">
+                        <div class="contact-card-icon"><i class="bi bi-whatsapp"></i></div>
+                        <h3>WhatsApp</h3>
+                        <p>+91 95180 29569</p>
+                    </a>
+                    <a href="https://instagram.com/_vivek25__" target="_blank" class="contact-card glass-card" id="contactInsta">
+                        <div class="contact-card-icon"><i class="bi bi-instagram"></i></div>
+                        <h3>Instagram</h3>
+                        <p>@_vivek25__</p>
                     </a>
                 </div>
 
@@ -554,6 +736,71 @@
             </div>
         </div>
     </footer>
+
+    <!-- ============ INTERACTIVE CLI TERMINAL MODAL ============ -->
+    <div class="modal-overlay" id="terminalModal" aria-hidden="true">
+        <div class="terminal-window">
+            <div class="terminal-bar">
+                <div class="terminal-dots">
+                    <span class="dot dot-close" id="termClose"></span>
+                    <span class="dot dot-min"></span>
+                    <span class="dot dot-max"></span>
+                </div>
+                <div class="terminal-title"><i class="bi bi-terminal"></i> vivek@devops-cluster:~ (bash)</div>
+                <div class="terminal-shortcut">Esc to close</div>
+            </div>
+            <div class="terminal-scanline"></div>
+            <div class="terminal-body" id="terminalOutput">
+                <div class="term-line term-welcome">
+                    <span>⚡ Vivek Sharma DevOps Interactive Shell [v2.4.0]</span><br>
+                    <span>Type <strong class="term-highlight">'help'</strong> to view available commands or try <strong class="term-highlight">'kubectl get pods'</strong>, <strong class="term-highlight">'terraform plan'</strong>, <strong class="term-highlight">'sudo hire'</strong>.</span>
+                </div>
+            </div>
+            <div class="terminal-prompt-bar">
+                <span class="term-prompt-user">vivek@devops-cluster:~$</span>
+                <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="type command here..." aria-label="Terminal command input">
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ COMMAND PALETTE ============ -->
+    <div class="modal-overlay" id="cmdPalette" aria-hidden="true">
+        <div class="cmd-box glass-card">
+            <div class="cmd-search-wrap">
+                <i class="bi bi-search"></i>
+                <input type="text" id="cmdInput" placeholder="Type a command or search section (e.g. Projects, Skills, Resume)..." autocomplete="off">
+                <span class="cmd-kbd">ESC</span>
+            </div>
+            <div class="cmd-results" id="cmdResults">
+                <div class="cmd-group-label">Quick Navigation</div>
+                <div class="cmd-item active" data-action="nav" data-target="#home"><i class="bi bi-house"></i> Home</div>
+                <div class="cmd-item" data-action="nav" data-target="#about"><i class="bi bi-person"></i> About Vivek</div>
+                <div class="cmd-item" data-action="nav" data-target="#journey"><i class="bi bi-briefcase"></i> Experience Journey</div>
+                <div class="cmd-item" data-action="nav" data-target="#skills"><i class="bi bi-code-slash"></i> Technical Skills</div>
+                <div class="cmd-item" data-action="nav" data-target="#infrastructure"><i class="bi bi-cpu"></i> DevOps Architecture</div>
+                <div class="cmd-item" data-action="nav" data-target="#projects"><i class="bi bi-folder"></i> Featured Projects</div>
+                <div class="cmd-item" data-action="nav" data-target="#contact"><i class="bi bi-envelope"></i> Contact Me</div>
+                <div class="cmd-group-label">Interactive Actions</div>
+                <div class="cmd-item" data-action="terminal"><i class="bi bi-terminal"></i> Open Interactive DevOps CLI Shell</div>
+                <div class="cmd-item" data-action="theme"><i class="bi bi-palette"></i> Toggle Color Theme</div>
+                <div class="cmd-item" data-action="resume"><i class="bi bi-file-earmark-pdf"></i> Open Resume PDF</div>
+                <div class="cmd-item" data-action="github"><i class="bi bi-github"></i> Visit GitHub Profile</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ PROJECT DETAIL MODAL ============ -->
+    <div class="modal-overlay" id="projectModal" aria-hidden="true">
+        <div class="project-modal-card glass-card">
+            <button class="modal-close-btn" id="projectModalClose" aria-label="Close modal"><i class="bi bi-x-lg"></i></button>
+            <div class="project-modal-body" id="projectModalContent">
+                <!-- Dynamically injected content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TOAST NOTIFICATION CONTAINER ============ -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <!-- ============ SCRIPTS ============ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
